@@ -1,9 +1,10 @@
 CFLAGS	= -std=c++98 -pedantic -Wall -Werror -Wextra
 CXX		= c++
-NAME	= minimal_makefile
+NAME	= fixed.out
 OBJS	= $(SRCS:.cpp=.o)
 RM		= rm -f
-SRCS	= main.cpp
+SRCS	= main.cpp \
+		  Fixed.cpp
 
 all: $(NAME)
 

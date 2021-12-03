@@ -1,4 +1,4 @@
-CFLAGS	= -std=c++98 -pedantic -Wall -Werror -Wextra
+CFLAGS	= -std=c++98 -Wall -Werror -Wextra
 CXX		= c++
 NAME	= fixed.out
 OBJS	= $(SRCS:.cpp=.o)

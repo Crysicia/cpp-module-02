@@ -10,11 +10,11 @@ Fixed::Fixed(Fixed& copy) {
 }
 
 Fixed::Fixed(const float data) {
-	this->rawBits = (int)roundf(data * (1 << this->fractionalBits));
+	this->rawBits = roundf(data * (1 << this->fractionalBits));
 }
 
 Fixed::Fixed(const int data) {
-	this->rawBits = data * (1 << this->fractionalBits);
+	this->rawBits = data << this->fractionalBits;
 }
 
 Fixed::~Fixed() {
@@ -41,7 +41,7 @@ void Fixed::setRawBits(int const data) {
 }
 
 int Fixed::toInt(void) const {
-	return this->rawBits / (1 << this->fractionalBits);
+	return this->rawBits >> this->fractionalBits;
 }
 
 float Fixed::toFloat(void) const {
